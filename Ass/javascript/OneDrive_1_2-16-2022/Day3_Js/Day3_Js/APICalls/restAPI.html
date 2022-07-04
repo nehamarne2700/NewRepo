@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadUsers(){
+            var url = "https://jsonplaceholder.typicode.com/users"
+            var xhttp = new XMLHttpRequest()
+            xhttp.open('GET',url,true)
+            xhttp.send()
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    //here we are converting array of JSON objects to 
+                    //javascript objects using parse method
+                    var userArr = JSON.parse(xhttp.responseText)
+                    showUsers(userArr)
+                }         
+            }
+        }
+        function showUsers(userArr){
+            var out = " "
+            for(let obj of userArr){
+                out += "<br/>"+obj.id+" "+obj.name+" "+obj.username+" "+obj.email
+            }
+            document.getElementById("demo").innerHTML = out
+        }
+        function handleEvent(){
+            document.getElementById("btn").onclick = loadUsers
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="demo">USers detail will be displayed here</div>
+    <button id="btn">Load Users</button>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //consider this as super
+        function Employee(empId,empName){
+            this.empId = empId
+            this.empName = empName
+
+            //constr level method
+            this.showDetails = function(){
+                document.write("<br/>"+" id = "+this.empId+" name = "+this.empName)
+            }
+        }
+        //prototype level method
+        Employee.prototype.check = function(){
+            document.write("<br/>"+" Employee prototype level method check")
+        }
+
+        //consider this as sub
+        function Manager(empId,empName,empSal){
+            this.empSal = empSal
+
+            //constr level method
+            this.showSal = function(){
+                document.write("<br/>"+"salary = "+this.empSal)
+            }
+        }
+
+        //prototype chaining
+        Manager.prototype = new Employee(1,"XYZ")
+
+        var mgr1 = new Manager(11,"Ganesh",80000)
+        mgr1.showDetails()//constr level method of Employee i.e. super
+        mgr1.showSal() // constr level method of manager
+        mgr1.check() //prototype level method of Employee
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

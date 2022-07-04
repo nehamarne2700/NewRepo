@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- inheritance using ES6 -->
+    <script>
+        class Employee {
+            constructor(empId,empName){
+                this.empId = empId 
+                this.empName = empName
+            }
+            getEmpDetails(){
+                document.write("<br/>"+" id = "+this.empId+" name = "+this.empName)
+            }
+        }
+
+        class Manager extends Employee{
+            constructor(empId,empName,empSal){
+                super(empId,empName)
+                this.empSal = empSal
+            }
+            //overridden function - dynamic polymorphism
+            getEmpDetails(){
+                super.getEmpDetails()
+                document.write("<br/>"+" salary = "+this.empSal)
+            }
+        } 
+        var mgr1 = new Manager(15,"Rupali",70000)
+        mgr1.getEmpDetails()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

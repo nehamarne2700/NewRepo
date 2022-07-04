@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str = "Checking built in objects from JS"
+        document.write("<br/>"+" str is "+str+" type of str = "+typeof(str))
+        document.write("<br/>"+" length of str = "+str.length)
+        document.write("<br/>"+" char at index 4 = "+str.charAt(4))
+        document.write("<br/>"+" substring from 0 to 4 = "+str.substr(0,4))
+        document.write("<br/>"+" str in lowercase = "+str.toLowerCase())
+        document.write("<br/>"+" str in uppercase = "+str.toUpperCase())
+        document.write("<br/>"+" index of i in str = "+str.indexOf("i"))
+        document.write("<br/>"+" last occurance of i in str = "+str.lastIndexOf("i"))
+
+        var today = new Date()
+        document.write("<br/>"+" today is "+today+" typeof today = "+typeof(today))
+        document.write("<br/>"+" day in today is "+today.getDay())
+        document.write("<br/>"+" date in today is "+today.getDate())
+        document.write("<br/>"+" month of today is "+today.getMonth())
+        document.write("<br/>"+" year of today is "+today.getFullYear())
+        document.write("<br/>"+" hour from today = "+today.getHours())
+
+        document.write("<br/>"+" random number = "+Math.random())
+        document.write("<br/>"+" square root of 256 = "+Math.sqrt(256))
+        document.write("<br/>"+" power of 7 to 4 = "+Math.pow(7,4))
+
+        let arr1 = [12,45,78,34]
+        let arr2 = new Array("Hello","Welcome","Bye")
+        //mixed array
+        let arr3 = [1,new Date(),"JS",true]
+
+        document.write("<br/>"+" arr1 details ")
+        for(let ele of arr1){
+            document.write(" "+ele )
+        }
+        document.write("<br/>"+" arr2 details ")
+        for(let ele of arr2){
+            document.write(" "+ele )
+        }
+        document.write("<br/>"+" arr3 details ")
+        for(let ele of arr3){
+            document.write(" "+ele )
+        }
+        document.write("<br/>"+"reverse of arr1 = "+arr1.reverse())
+        //assignment - use map function on arr1 and print whether the array element is 
+        //odd or even
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

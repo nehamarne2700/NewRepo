@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var str="Hello , My self Neha Marne . I am from Pune , Maharashatra ."
+        const arr=str.split(" ")
+        var max=arr[0].length
+        var resIndex=0
+        for(var index in arr){
+            if(max<arr[index].length){
+                max=arr[index].length
+                resIndex=index
+            }
+        }
+        document.write("<br/>The max length word in string : "+str+" is : "+arr[resIndex])
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

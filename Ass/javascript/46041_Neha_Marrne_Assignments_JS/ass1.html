@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        if(confirm("Do you want Conversion from Celsius to Fahrenheit ?")){
+            var ipTemp=Number(prompt("Enter Temperature In Celsius"))
+            var resTemp=(ipTemp*9/5)+32
+            document.write("<br/>"+"Temperature In Celsius "+ipTemp+" : converted Fahrenheit "+resTemp)
+        }
+        else{
+            var ipTemp=Number(prompt("Enter Temperature In Fahrenheit"))
+            var resTemp=5/9*(ipTemp-32)
+            document.write("<br/>"+"Temperature In Fahrenheit "+ipTemp+" : converted Celsius "+resTemp)
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

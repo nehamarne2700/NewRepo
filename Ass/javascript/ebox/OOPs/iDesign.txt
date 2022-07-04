@@ -1,0 +1,23 @@
+1]
+
+
+2]
+
+var fs = require('fs');
+var input=fs.readFileSync('input.txt').toString().trim().split('\n');
+//fill your code
+
+ a = String(input);
+
+CheckNameLength(a);
+function CheckNameLength(a){
+  if (a.length >= 4) {
+    console.log(a);
+  } 
+  else {
+    console.log("Name is too short");
+  }
+}
+
+
+3]

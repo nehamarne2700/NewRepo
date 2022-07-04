@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var DATA = 100 //global variable
+        function check(){
+            var num1 = 50 //local variable to function
+            //inner block
+            {
+                let num2 = 60
+                //var num2 = 40 //block variable
+                /*
+                num2 is declared in a block using var keyword, its declaration will be 
+                shifted to function scope because of javascript hoisting.
+                Whenever variable is declared using var keyword it does not have block
+                level scope as javascript hoisting shift it to function scope
+                */
+                document.write("<br/>"+"In inner block"+" DATA = "+DATA+" num1 = "+num1
+                +" num2 = "+num2)
+            }
+            document.write("<br/>"+"outside inner block"+" DATA = "+DATA+" num1 = "+num1
+                +" num2 = "+num2)
+        }
+        check()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

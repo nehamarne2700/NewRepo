@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form action="" id="form =1">
+        <select id="select1">
+            <option value="Mumbai">Mumbai</option>
+            <option value="Nashik">Nashik</option>
+            <option value="Pune">Pune</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Aurangabad">Aurangabad</option>
+        </select>
+    </form>
+    <script>
+        function getSelect(){
+        var options=document.getElementById("select1").options
+        for(let i=0;i<options.length;i++){
+            alert(options[i].value)
+        }
+        } 
+        getSelect()
+    </script>
+</body>
+</html>

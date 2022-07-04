@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- using module pattern it will be possible to store multiple 
+    objects at same place and also to fetch details once. -->
+    <script>
+        function Student(sId,sName){
+            this.sId = sId
+            this.sName = sName
+        }
+
+        var studentPattern = (function(){
+            var stuList = []
+            return {
+                add : function(stu){
+                    stuList.push(stu)
+                },
+                show : function(){
+                    for(let obj of stuList){
+                        document.write("<br/>"+" id = "+obj.sId+" name = "+obj.sName)
+                    }
+                }
+            }
+        })()
+
+        studentPattern.add(new Student(1,"Raj"))
+        studentPattern.add(new Student(2,"Geet"))
+        studentPattern.add(new Student(3,"Riva"))
+        studentPattern.add(new Student(4,"Arvi"))
+
+        studentPattern.show()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function modifyPara(){
+            var p1 = document.getElementById("para")
+            p1.innerHTML = "<h1>"+"Changed contents of paragraph"+"</h1>"
+        }
+        function handleEvent(){
+            // this way of handling event is known as unobtrusive event handling and is 
+            //always preferred
+            var btn = document.getElementById("btn")
+            btn.onclick = modifyPara
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <p id="para">Welcome to events!!!</p>
+    <br/>
+    <!-- below way to handle events is known as obtrusive event handling and it is not 
+    recommended as html and js are mixed, html is not a pure html and it becomes difficult
+to manage,maintain and to read the code if UI is complex -->
+    <!-- <button onclick="modifyPara()">Modify</button> -->
+    <!-- below is a preferred way to add and handle events -->
+    <button id="btn">Modify</button>
+</body>
+</html>

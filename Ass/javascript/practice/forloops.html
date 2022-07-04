@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+/*      var arr1=[10,20,30,50]
+        var arr2=["pune","mumbai","delhi"]
+        var arr3=[110,123,156,178]
+
+        //standard for
+        document.write("<br/>"+"usinf standard for arr1")
+        for(var i=0;i<arr1.length;i++){
+            document.write(" "+arr1[i])
+        }
+
+        //for in loop
+        document.write("<br/>"+"using for in arr2")
+        for(var index in arr2){
+            document.write("<br/>index is "+index+" ele is "+arr2[index])
+        }
+
+        //for of loop
+        document.write("<br/>"+"using for of arr3")
+        for(var ele of arr3){
+            document.write("<br/>ele is "+ele)
+        }
+*/
+        var DATA=100 //global var
+        function check(){
+            var num1=50 //local var
+            //inner block
+            {
+                //var num2=40 //block var==function scope is assigned by js hoisting i.e, accessible outside block to function
+                let num2=60 //stricts variable to block scope i.e, not accessible outside block
+                document.write("<br/>"+"In inner block"+"DATA = "+DATA+" num1 ="+num1)
+            }
+            document.write("<br/>"+"In inner block"+"DATA = "+DATA+" num2 ="+num2)
+        }
+        check()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

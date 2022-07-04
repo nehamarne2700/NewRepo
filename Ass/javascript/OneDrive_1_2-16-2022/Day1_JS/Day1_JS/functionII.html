@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- anonymous function is a function without name and it mostly used 
+    as a callback function in event handling -->
+    <script>
+        //1. anonymous func as self executing func / IIFE
+      var res = (function(str){
+            return str.length
+        })("Hello")
+        document.write("<br/>"+" length is "+res)
+
+        //2. anonymous as a callback
+        //doRef is a reference to another func
+       function calculate(num1,num2,doRef){
+           return doRef(num1,num2) //invoking anonymous func indirectly
+       }
+       
+       var res2 = calculate(45,2,function(x,y){
+           return x*y
+       }) 
+       document.write("<br/>"+" res2 = "+res2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

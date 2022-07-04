@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function modify(){
+            //this refers document
+            if(this.readyState === 'interactive'){
+                alert("document state changed and it is "+this.readyState)
+            }
+            if(this.readyState === 'complete'){
+            alert("document state changed and it is "+this.readyState)
+            var para = document.getElementById("p1")
+            para.innerHTML = "<h1>"+"Contents are modified"+"</h1>"
+            }
+        }
+        document.onreadystatechange = modify
+    </script>
+</head>
+<body>
+    <p id="p1">On ready state change of document</p>
+</body>
+</html>

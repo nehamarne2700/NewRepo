@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table1">
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Neha</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Nikita</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Rutuja</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Akanksha</td>
+        </tr>
+    </table>
+    <script>
+        var table1=document.getElementById("table1")
+        var tRow=table1.getElementsByTagName("tr")
+        // for(let tr of tRow){
+        //     let tData=tr.getElementsByTagName("td")
+        //     document.write(Object.keys(tData))
+        //     tData.style.textDecoration-"underine"
+        // }
+        for(var i=0;i<tRow.length;i+=2){
+            tRow[i].style.background="yellow"
+            tRow[i].style.color="red"
+            //tRow[i].style.textDecoration="underline"
+        }
+        tRow[0].style.fontWeight="bold"
+        tRow[tRow.length-1].style.fontStyle="italic"
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadProd(){
+            var url = "http://localhost:8000/products"
+            var xhttp = new XMLHttpRequest()
+            xhttp.open('GET',url,true)
+            xhttp.send()
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    var prodArr = JSON.parse(xhttp.responseText)
+                    showProducts(prodArr)
+                }
+            }
+        }
+        function showProducts(prodArr){
+            var out = " "
+            for(let prod of prodArr){
+                out += "<br/>"+prod.id+" "+prod.name+" "+prod.price
+            }
+            document.getElementById("demo").innerHTML = out
+        }
+        function handleEvent(){
+            document.getElementById("btn").onclick = loadProd
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+    <button id="btn">Load Products</button>
+
+    <!-- Assignment - provide 2 buttons add Product and edit product 
+    on click of add product a new product should be added in product.json
+    on click of edit product a product details should be updated 
+    in case of addProduct new product details should be passed as a parameter to send 
+    method-->
+</body>
+</html>

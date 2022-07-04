@@ -1,0 +1,265 @@
+i-design
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      table{
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function showTable(bookList) {
+        var result = document.getElementById("result");
+
+        result.innerHTML = "";
+
+        var table = document.createElement("table");
+        var tbody = document.createElement("tbody");
+
+        table.appendChild(tbody);
+        result.appendChild(table);
+
+        tbody.innerHTML =
+          "<tr><td>Name</td><td>Author</td><td>Price</td><td>Publication</td></tr>";
+
+        for (var book of bookList) {
+          var name = book.getElementsByTagName("name")[0].textContent;
+          var author = book.getElementsByTagName("author")[0].textContent;
+          var price = book.getElementsByTagName("price")[0].textContent;
+          var publication =
+            book.getElementsByTagName("publication")[0].textContent;
+
+          tbody.innerHTML +=
+            "<tr><td>" +
+            name +
+            "</td><td>" +
+            author +
+            "</td><td>" +
+            price +
+            "</td><td>" +
+            publication +
+            "</td></tr>";
+
+        //   var tr = document.createElement("tr");
+        //   tbody.appendChild(tr);
+        }
+      }
+      function getXml() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "bookDetails.xml");
+        var category = document.getElementById("category").value;
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+            var bookList = [];
+            var doc = request.responseXML;
+            var book = doc.getElementsByTagName("book");
+            if (category == "Drama") {
+              for (var i = 0; i < book.length; i++) {
+                if (book[i].getAttribute("category") == category)
+                  bookList.push(book[i]);
+              }
+              showTable(bookList);
+            } else if (category == "Science fiction") {
+              for (var i = 0; i < book.length; i++) {
+                if (book[i].getAttribute("category") == category)
+                  bookList.push(book[i]);
+              }
+              showTable(bookList);
+            }
+          }
+        };
+        request.send();
+      }
+      function handleEvent() {
+        document.getElementById("display").onclick = getXml;
+      }
+      window.onload = handleEvent;
+    </script>
+  </head>
+  <body>
+    <h2>Book Details</h2>
+    <label>Filter by category : </label>
+    <select name="category" id="category">
+      <option value="Drama">Drama</option>
+      <option value="Science fiction">Science fiction</option>
+    </select>
+    <button id="display">Submit</button>
+    <div id="result"></div>
+  </body>
+</html>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+i-Assess
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      th,td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      table {
+        border: 1px solid black;
+      }
+    </style>
+    <script>
+      function showTable(playlist) {
+        var result = document.getElementById("playlist");
+
+        result.innerHTML = "";
+
+        var table = document.createElement("table");
+        var tbody = document.createElement("tbody");
+
+        table.appendChild(tbody);
+        result.appendChild(table);
+
+        tbody.innerHTML =
+          "<tr><th>Song</th><th>Artist</th></tr>";
+
+        for (var song of playlist) {
+          var name = song.getElementsByTagName("name")[0].textContent;
+          var artist = song.getElementsByTagName("artist")[0].textContent;
+          var description =
+            "<td>" +
+            name +
+            "</td><td>" +
+            artist +
+            "</td>";
+
+          var tr = document.createElement("tr");
+
+          tr.innerHTML = description;
+          tbody.appendChild(tr);
+        }
+      }
+      function getXml() {
+        var request = new XMLHttpRequest();
+        request.open("GET", "playlist.xml", true);
+        request.onreadystatechange = function () {
+          if (request.readyState == 4 && request.status == 200) {
+            var playlist = [];
+            var doc = request.responseXML;
+            var song = doc.getElementsByTagName("song");
+            for (var i = 0; i < song.length; i++) {
+              playlist.push(song[i]);
+            }
+            showTable(playlist);
+          }
+        };
+        request.send();
+      }
+      function handleEvent() {
+        document.getElementById("getPlaylist").addEventListener("click",getXml);
+      }
+      window.onload = handleEvent;
+    </script>
+  </head>
+  <body>
+    <h1>Ajax</h1>
+    <button id="getPlaylist">Get Playlist</button>
+    <div id="playlist"></div>
+  </body>
+</html>
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+<html>
+<link rel="stylesheet" href="style.css">
+<head>
+   <script>
+      function showTable(bookList){
+         var result = document.getElementById("booklist");
+         result.innerHTML = "";
+
+         var table = document.createElement("table");
+         var tbody = document.createElement("tbody");
+
+         table.appendChild(tbody);
+         result.appendChild(table);
+
+         tbody.innerHTML = "<tr><th>Book Name</th><th>Author Name</th><th>Price</th></tr>";
+
+         for (var book of bookList) {
+            var name = book.getElementsByTagName("bookname")[0].textContent;
+            var author = book.getElementsByTagName("authorname")[0].textContent;
+            var price = book.getElementsByTagName("price")[0].textContent;
+            
+            tbody.innerHTML +=
+            "<tr><td>" +
+            name +
+            "</td><td>" +
+            author +
+            "</td><td>" +
+            price +
+            "</td></tr>";
+
+         }
+      }
+      function getXml(){
+         var request = new XMLHttpRequest();
+         request.open("GET", "booklist.xml", true);
+         request.onreadystatechange = function () {
+            if (request.readyState == 4 && request.status == 200) {
+               var booklist = [];
+               var doc = request.responseXML;
+               var book = doc.getElementsByTagName("book");
+               for (var i = 0; i < book.length; i++) {
+                  booklist.push(book[i]);
+               }
+               showTable(booklist);
+            }
+        };
+        request.send();
+      }
+      function tojson(){
+         var name = document.getElementById("name").value;
+         var author = document.getElementById("price").value;
+         var price = document.getElementById("availableQuantity").value;
+
+         var data = {
+            "Book Name": name,
+            "Author Name": author,
+            "Price": price
+         }
+
+         document.getElementById("jsonData").innerHTML = JSON.stringify(data);
+      }
+   </script>
+</head>
+<body onload="getXml()">
+   <h1>Book List</h1>
+   <div id="booklist"></div>
+   <div class="formData">
+      <label>Book Name : </label>
+      <input type="text" id="name" name="name" class="fields">
+      <br>
+      <br>
+      <label>Author Name : </label>
+      <input type="text" id="price" name="aname" class="fields">
+      <br>
+      <br>
+      <label>Book Price : </label>
+      <input type="text"  id="availableQuantity" name="price" class="fields">
+      <br>
+      <br>
+   </div>
+   <center>
+      <button id="convertToJSON" onclick="tojson()">Convert to JSON</button>
+   </center>
+   <div id="jsonData"></div>  
+</body>
+
+</html>

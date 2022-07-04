@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr1 = [10,20,30,50]
+        var arr2 = ["Pune","Mumbai","Delhi"]
+        var arr3 = [110,123,156,178]
+
+        //1. arr1 elements using standard for
+        document.write("<br/>"+"using standard for arr1 details ")
+        for(var i=0; i<arr1.length;i++){
+            document.write(" "+arr1[i])
+        }
+
+        //2. arr2 details using for in loop
+        document.write("<br/>"+"using for in arr2 details ")
+        for(var index in arr2){
+            document.write("<br/>"+"index is "+index+" element is "+arr2[index])
+        }
+        //3. arr3 details using for of loop
+        document.write("<br/>"+"using for of arr3 details ")
+        for(var ele of arr3){
+            document.write(" "+ele)
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

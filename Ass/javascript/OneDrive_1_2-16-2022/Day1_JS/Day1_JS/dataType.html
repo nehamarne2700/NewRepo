@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var pname = "Rimali"
+        var age = 30
+        var gender = "F"
+        var salary = 60000.90
+        var flag = true 
+        var marks
+        var arr = [1,2,3,4]
+        var obj = {
+            city : "Pune",
+            country : "India"
+        }
+        /*for checking data type of variables we can use typeof() operator in JS*/
+        document.write("<br/>"+" type of pname is "+typeof(pname ))
+        document.write("<br/>"+" type of age is "+typeof(age))
+        document.write("<br/>"+" type of gender is "+typeof(gender))
+        document.write("<br/>"+" type of salary is "+typeof(salary))
+        document.write("<br/>"+" type of flag is "+typeof(flag))
+        document.write("<br/>"+" type of marks is  "+typeof(marks ))
+        document.write("<br/>"+" type of arr is "+typeof(arr))
+        document.write("<br/>"+" typeof obj is "+typeof(obj))
+
+        age = "35"
+        document.write("<br/>"+"after modifying age to string type of age is "+typeof(age))
+
+        // == compares only values and not the data type
+        var z = 80 
+        // if(z == 80){
+        //     document.write("<br/>"+" z is 80 and it is a number")
+        // }
+        // if(z == "80"){
+        //     document.write("<br/>"+" z is 80 but now it is compared with 80 in string form")
+        // }
+        // === checks both data type and value 
+        if(z === 80){
+            document.write("<br/>"+" z is 80 and it is a number")
+        }
+        if(z === "80"){
+            document.write("<br/>"+" z is 80 but now it is compared with 80 in string form")
+        }
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

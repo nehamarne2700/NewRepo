@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //object constructor 
+        function Employee(empId,empName){
+            //this refers current object
+            this.empId = empId
+            this.empName = empName
+
+            //constructor level method - it will have multiple copies with respect 
+            //to number of objects created and it is wastage of memory
+            //showDetails should have single copy and it should be accessible to all 
+            //objects of Employee - it is possible using prototype 
+            // this.showDetails = function(){
+            //     document.write("<br/>"+" id is "+this.empId+" name is "+this.empName)
+            // }
+        }
+
+        //this showDetails as it is at prototype level of employee will have single copy
+        //and accessible to all objects of Employee
+        Employee.prototype.showDetails = function(){
+            document.write("<br/>"+" id is "+this.empId+" name is "+this.empName)
+        }
+        var emp1 = new Employee(12,"Kavita")
+        var emp2 = new Employee(13,"Shilpa")
+        emp1.showDetails()
+        emp2.showDetails()
+
+        //company is prototype level prop
+        Employee.prototype.company = "Persistent Systems Ltd"
+        document.write("<br/>"+" emp1 company = "+emp1.company)
+        document.write("<br/>"+" emp2 company = "+emp2.company)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

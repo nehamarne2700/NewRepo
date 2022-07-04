@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleEvent(){
+            var div1 = document.getElementById("div1")
+            var div2 = document.getElementById("div2")
+            var p1 = document.getElementById("p1")
+
+            div1.addEventListener('click',function(){
+                alert("event occured on div1 and handled")
+            },false)
+            div2.addEventListener('click',function(){
+                alert("event occured on div2 and handled")
+            },false)
+            p1.addEventListener('click',function(event){
+                alert("event occured on paragraph and handled")
+                event.stopPropagation() //this will stop event bubbling
+            },false)
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="div2">
+            <p id="p1">
+                This is a paragraph
+            </p>
+        </div>
+    </div>
+
+    <style>
+        #div1 {
+            height: 100px;
+            width : 200px;
+            border: solid 2px red ;
+            background-color: aqua;     
+        }
+        #div2 {
+            height: 80px;
+            width : 150px;
+            border: solid 2px black ;
+            background-color: burlywood;
+        }
+        #p1 {
+            height:  60px;
+            width: 100px;
+            border: solid 3px black;
+            background-color: lightsalmon;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var thisLeft=0;
+        var thisRight=true;
+        var moveID=0;
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        function move(){
+            var thisText= document.getElementById('div1');
+            if (thisRight){
+                thisLeft += 50; 
+                thisText.style.left=thisLeft +"px";
+                if(thisLeft>=width){
+                    thisRight=false
+                }
+            }else {
+                thisLeft -=50; 
+                thisText.style.left=thisLeft +"px";
+                if(thisLeft<=0){
+                    thisRight=true
+                }
+            }
+            }
+        
+        function doMove(){
+        moveID=setInterval(move, 500);
+        }
+        
+        </script>
+</head>
+<body onload= "doMove()" >
+    <div id="div1">
+    </div>
+    <style>
+
+        #div1{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            background-color: blueviolet;
+        }
+    </style>
+</body>
+</html>

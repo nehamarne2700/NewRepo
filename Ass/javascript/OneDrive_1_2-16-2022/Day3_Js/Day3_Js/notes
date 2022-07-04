@@ -1,0 +1,86 @@
+In javascript you can not implement function overloading
+
+function overloading - functions with same name and with diff signature
+are implemented in a same scope.
+
+In JS by default every function is variable argument function i.e. it can take 
+0,1 or more than argument as well as same or diff type of arguments.
+
+With every html element there is an event associated
+e.g. button - click,focus,blur 
+input type="text" - keypressed, mouseEnter,mouseLeave ,change
+radio button, checkbox - change
+dropdown - select
+
+addEventListener is an API provided to any html element for handling events 
+and it takes 3 arguments
+1. name of event in string form 
+2. listener name - this can be already existing functions or you can write anonymous function 
+    as a listener 
+3. event capture - boolean value - if false it is event bubbling and if true it is 
+event capturing 
+
+event bubbling - it is event occurs on child elements and get handled and it is passed to 
+parent element and its handled there as well 
+
+event capturing - event occured on child element and it is getting captured from parent element 
+to child elements
+
+AJAX - Asynchrnous javascript and xml - it is used to make HTTP requests to web server 
+It is uses XMLHttpRequest object for making asynchrnous calls. 
+Benefit of asynchrnous calls are we can fetch or post data to server without any interruption
+to user. it increases performance of applications or web page 
+
+XMLHttpRequest object has readyStates associated with state and those are 
+0 - initialized
+1 - loading 
+2- loaded
+3 - interactive 
+4 - complete 
+
+
+HTTP status codes 
+100 - info 
+200 - success 
+300 - redirect
+400 - client error 
+500 - server error 
+
+
+HTTP methods - POST, GET, DELETE, PUT 
+
+USing all above concepts we r going to make AJAX call 
+steps to make AJAX call are 
+1. configure URL 
+2. Create object of XMLHttpRequest
+3. open request to web server 
+4. send the request to server
+5. check the status and depending on that get the response.
+
+XMLHttpRequest object is used to exchange information with web server 
+
+
+<!-- Assignment - provide 2 buttons add Product and edit product 
+on click of add product a new product should be added in product.json
+on click of edit product a product details should be updated 
+in case of addProduct new product details should be passed as a parameter to send 
+method-->
+
+Doocument Object model - DOM 
+
+Browser Object model - 
+
+history - it holds user url navigation history
+it consist of 3 methods 
+go() - using this we can navigate from any page to any other page 
+forward() - we can navigate to next page 
+back() - we can navigate to prev page 
+
+navigator - using this object we can find out browser related information i.e. 
+plugins, cookieEnabled, name, version
+
+location - using this object you can find details about requested url i.e.
+hostName, href, port, pathName, origin
+
+
+

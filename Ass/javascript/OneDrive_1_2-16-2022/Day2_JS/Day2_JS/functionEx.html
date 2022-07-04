@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        swap(4,7) //this will work as Javascript hoisting works for function declaration
+        //syntax
+        //1. function declaration syntax
+        function swap(num1,num2){
+            var temp = 0
+            temp = num1
+            num1 = num2 
+            num2 = temp 
+            document.write("<br/>"+" num1 = "+num1+" num2 = "+num2)
+        }
+       // swap(4,7)
+
+       //javascript hoisting will not work for function expression syntax
+       document.write(" char found in str is "+findChar("Hello","l"))
+        //2. function expression syntax
+        var findChar = function(str,ch){
+            for(let ele of str){
+                if(ele === ch){
+                    return ele 
+                }
+                
+            }     
+        }
+        //document.write(" char found in str is "+findChar("Hello","l"))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

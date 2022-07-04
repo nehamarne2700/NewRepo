@@ -1,0 +1,75 @@
+2 ways to implement function in JS 
+i. function declaration syntax
+ii. function expression syntax 
+
+In JS built-in objects are
+1. Array
+2. Number
+3. Math 
+4. Date 
+5.String
+6. Boolean
+
+USer defined objects in JS 
+1. i. using empty {} ii.direct instance 
+2. using object literal
+3. using object constructor
+
+prototype is property inherited in every object constructor from the super of JS i.e. Object 
+and using this prototype we can declare other properties as well as methods and those 
+will have single copy will be available to all objects 
+
+object - real time entity with its well defined structure and behavior 
+
+characteristics of an object 
+1. state - current value of all attributes of an object 
+static state - attributes with constant values e.g. color and make of car
+dynamic state - attributes with variable values e.g. speed and fuel level of car 
+2. identity - unique state of an object which differentiates it from other object 
+AccountNumber, customerId, EmpId
+3. behavior - action and reaction to state changes 
+e.g. slow and fast movement of car or if car is stopped 
+minimize, maximize of window 
+4. responsibility - role of an object within system
+
+Major pillors of OOP 
+inheritance - Hiring features from already existing classes by adding new features we can 
+create special classes 
+Encapsulation - securing or hiding of data.
+ Hiding implementation and exposing public interface 
+polymorphism - one message given to diff objects and each object will react in a diff 
+manner depending on its implementation
+function overloading - functions with same name but with diff signatures. Signature includes 
+sequence of parameters / data type of parameters / number of parameters 
+overloading is implemented in a same scope  
+function overriding - functions with same name and with same signature implemented differently 
+in different scope of a hierarchy.
+Abstraction - selecting necessary properties or methods and ignoring rest 
+
+Object.defineProperty() API - need of this is to add a property dynamically to an object 
+and also we can configure the property as it may or may not be deleted and it may or 
+may not be modified 
+it takes 3 arguments 
+1. name of object to which you want to add property 
+2. name of property in string form 
+3. descriptor object which has 4 properties in it 
+i. writable - boolean value, default it is false. if false prop can not be modified 
+ii. enumerable - boolean value, default it is false, if false it can not iterated 
+iii. configurable - boolean value, default it is false, if false it can not be deleted 
+iv. value - default value of property
+
+closure - means private data of outer function is accessible in the inner function though
+inner function executes seperately.
+
+
+Using ES5 standard we can implement inheritance in JS using 3 ways 
+i. prototype chaining 
+ii. classical inheritance / constructor stealing 
+iii. psuedoclassical inheritance
+
+using Es6 standard we can use extends keyword 
+
+prototype chaining - using this sub object can access constr level as well as prototype 
+level methods of super but limitation of prototype chaining is that to initialize properties
+of super we can not call super constructor in the sub constructor
+to overcome this limitation we have to use classical inheritance

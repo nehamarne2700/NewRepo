@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var bank= [ 
+            {
+                name: 'JOHN',
+                account: 'Saving',
+                AccountStatus: 'blocked'
+            },
+            {
+            name: 'KATE ',
+            account: 'Current',
+            AccountStatus: 'active'
+            },
+            {
+            name: 'MIKE',
+            account: 'Saving', 
+            AccountStatus: 'active'
+            }]
+
+            var name=prompt("Enter name to check account status : ")
+            getStatus(name.toUpperCase())
+
+            function getStatus(name){
+                for(let obj of bank){
+                    if(obj.name===name){
+                        if(obj.AccountStatus==="blocked"){
+                            alert("You need to activate your account")
+                        }
+                        if(obj.AccountStatus==="active"){
+                            alert("Account is Active")
+                        }
+                    }
+                }
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

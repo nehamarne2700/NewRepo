@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //arrow function
+        var printMsg=()=>document.write("<br/>PrintMsg")
+        printMsg()
+        var checkLen=(arr)=>document.write("<br/>Length is "+arr.length)
+        checkLen("hello")
+        var findMax=(num1,num2)=>{
+            if(num1>num2){
+                return num1
+            }
+            else{
+                return num2
+            }
+        }
+        document.write("<br/>Max is "+findMax(19,30))
+
+        //anonymous function -func without name 
+        
+        //self executing func
+        var res=(function(str){
+            return str.length
+        })("hello")
+        document.write("<br/>Length is "+res)
+
+        //anonymous as a callback
+        //doRef is reference to another func
+        function calculate(num1,num2,doRef){
+            return doRef(num1,num2)//invoking anonymous function indirecty
+        }
+
+        var res2=calculate(43,2,function(x,y){
+            return x*y
+        })
+        document.write("<br/>Calulate(43,2) is "+res2)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

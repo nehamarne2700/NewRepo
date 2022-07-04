@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Person(pname,paddress){
+            var data = "Confidential" //private data of Person
+            //below properties are public prop of Person
+            this.pname = pname
+            this.paddress = paddress
+            //below is public method of person using which we r accesing 
+            //private data - it is implementation of encapsulation
+            this.showData = function(){
+                document.write("<br/>"+" data = "+data)
+            }
+        }
+        var p1 = new Person("Pooja","Mumbai")
+        document.write("<br/>"+" p1 name is "+p1.pname+" p1 address is "+p1.paddress)
+        //document.write("<br/>"+" data = "+data)
+        p1.showData()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

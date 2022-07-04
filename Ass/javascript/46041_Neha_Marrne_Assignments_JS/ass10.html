@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handelEvent(){
+            var div1=document.getElementById("div1")
+            var btn=document.getElementById("btn")
+            var img1=document.getElementById("img1")
+
+            div1.addEventListener('click',function(){
+                alert("event : div1 clicked")
+            },true)
+            btn.addEventListener('click',function(){
+                alert("event : btn clicked")
+            },true)
+            img1.addEventListener('click',function(event){
+                event.stopPropagation()
+                alert("event : img1 clicked")
+            },true)
+        }
+        window.onload=handelEvent
+    </script>
+</head>
+<body>
+    <div id="div1" style="padding:30px;">
+        <Button id="btn">
+        <img id="img1" src='exo.jpg' style="width: 100px; height: 100px;"></img>
+        </Button>
+    </div>
+    <style>
+        #div1{
+            background-color: cadetblue;
+        }
+        #btn{
+            width: 200px;
+            height: 200px;
+            background-color: darkgoldenrod;
+        }
+        #img1{
+            background-color: aliceblue;
+        }
+    </style>
+</body>
+</html>

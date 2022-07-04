@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function modify(){
+            var div1 = document.getElementById("div1")
+            div1.innerHTML = "<h2><i>"+"Checking Javascript Concepts"+"</i></h2>"
+        }
+        /*
+        modify() should be called when page is completely loaded and we can make sure that 
+        using onload event of window object
+        */
+       window.onload = modify
+       /*
+       window refers browser and this may include plugin installation, css file importing 
+       or any other script execution so using window.onload we may have to wait for all 
+       these activities to get complete. it may take more time so instead of using this 
+       as we just want page to be ready before script execution we can make use of 
+       document object and its onreadystatechange event.
+       */
+    </script>
+</head>
+<body>
+    <div id="div1">Welcome To JS</div>
+</body>
+</html>

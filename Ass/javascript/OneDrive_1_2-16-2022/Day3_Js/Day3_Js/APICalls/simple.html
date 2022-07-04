@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadData(){
+            //1-configure url
+            var url = "info.txt"
+            //2-create object of XMLHttpRequest
+            var xhttp = new XMLHttpRequest()
+            //3- open request to server
+            xhttp.open('GET',url,true) //true - asynchronous call
+            //4-send to web server
+            xhttp.send()
+            //5- using onreadystatechange event on XMLHttpRequest object 
+            //check status of request and depending on success get the response
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    var data = xhttp.responseText
+                    document.getElementById("demo").innerHTML = data    
+                }
+            }
+
+        }
+        function handleEvent(){
+            var btn = document.getElementById("btn")
+            btn.onclick = loadData
+        } 
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="demo">This division contents will be replaced</div>
+    <button id="btn">Load Data</button>
+</body>
+</html>

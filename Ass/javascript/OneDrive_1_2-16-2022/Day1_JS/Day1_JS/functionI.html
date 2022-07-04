@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //1. func without input and return type
+        function display(){
+            document.write("<br/>"+"From display")
+        }
+        display()
+
+        //2. function with input and without return type
+        function showLength(str){
+            document.write("<br/>"+" length of str is "+str.length)
+        }
+        showLength("Welcome to Functions")
+
+        //3. function with input and return type
+        function findMin(num1,num2){
+            if(num1 < num2){
+                return num1 
+            }    
+            else {
+                return num2
+            }
+        }
+        document.write("<br/>"+" min is "+findMin(34,78))
+        //4. arrow func - lambda - they are faster in execution as it replaces function 
+        //call with its definition (i/p)=>definition
+        //i. arrow func without i/p and return
+        var printMessage = ()=>document.write("<br/>"+" from printMessage")
+        printMessage()
+        //ii. with input and no return
+        var checkLength = (arr)=>document.write("<br/>"+" length is "+arr.length)
+        checkLength("Hello")
+       //iii. with i/p and return - in this case definition must be in curly brace
+       var findMax = (num1,num2)=>{
+           if(num1 > num2){
+               return num1
+           }
+           else {
+               return num2
+           }
+       }
+       document.write("<br/>"+" max is "+findMax(98,65))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

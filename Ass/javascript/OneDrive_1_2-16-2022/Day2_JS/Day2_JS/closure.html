@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function outerFunction(){
+            var data = 60 //data is local to outerFunction
+            //data is private member of outerFunction
+
+            function innerFunction(){
+                document.write("<br/>"+"From Inner function")
+                document.write("<br/>"+" data = "+data)
+            }
+
+            document.write("<br/>"+"outside Inner function")
+            document.write("<br/>"+" data = "+data)
+           // innerFunction()//this is not closure implementation as innerFunction() execution
+            //will be part of outerFunction execution
+            return innerFunction
+        }
+        //outerFunction()
+        var innerRef = outerFunction()
+        //innerRef refers innerFunction(){}
+        innerRef() //this will invoke innerFunction seperately and it is a implementation
+        //of closure
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

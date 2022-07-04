@@ -1,0 +1,27 @@
+<booklist>
+<book>
+<bookname>Farm House</bookname>
+<authorname>George Orwell</authorname>
+<price>$10</price>
+</book>
+<book>
+<bookname>Good Times, Bad Times</bookname>
+<authorname>Harold Evans</authorname>
+<price>$20</price>
+</book>
+<book>
+<bookname>A Journey</bookname>
+<authorname>Tony Blair</authorname>
+<price>$50</price>
+</book>
+<book>
+<bookname>The Jungal Book</bookname>
+<authorname>Rudyard Kipling</authorname>
+<price>$30</price>
+</book>
+<book>
+<bookname>Oliver Twist	</bookname>
+<authorname>Charles Dickens</authorname>
+<price>$40</price>
+</book>
+</booklist>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Student(sId,sName){
+            this.sId = sId
+            this.sName = sName
+        }
+        var stu1 = new Student(1,"Poorvi")
+        document.write("<br/>"+" id of stu1 = "+stu1.sId+" name = "+stu1.sName)
+
+        stu1.sName = "Aditi"
+        document.write("<br/>"+"after name changed "+" id of stu1 = "+stu1.sId
+        +" name = "+stu1.sName)
+
+        delete stu1.sId
+        document.write("<br/>"+"after deleting id "+" id of stu1 = "+stu1.sId
+        +" name = "+stu1.sName)
+        /*
+        by default we can modify any property from object and also we can delete any property
+        */
+        //let's add sId dynamically to stu1 using defineProperty() API 
+        Object.defineProperty(stu1,'sId',{
+            value : 20,
+            writable : true,
+            configurable : true
+        })
+
+        document.write("<br/>"+"after defineProperty id in stu1 is  = "+stu1.sId)
+
+        stu1.sId = 100
+
+        document.write("<br/>"+"after modification id in stu1 is  = "+stu1.sId)
+
+        delete stu1.sId
+
+        document.write("<br/>"+"after deletion id in stu1 is  = "+stu1.sId)
+
+        /*Assignment - 
+        create another object of student and add multiple properties to it dynamically using 
+        defineProperties() API
+        */ 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

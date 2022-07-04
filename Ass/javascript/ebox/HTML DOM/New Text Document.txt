@@ -1,0 +1,121 @@
+    <h1>Grade Sheet</h1>
+    <label>Marks</label>
+    <input type="text" name="mark" id="mark"/>
+    <input type="button" value="Submit" name="submit" id="submit" onclick="myFunction()"/>
+    <div id="result"></div>
+    <script>
+        function myFunction(){
+            var mark = parseInt(document.getElementById("mark").value);
+
+            if(mark == 100)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : A+";
+            else if(mark >= 90 && mark <= 99)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : A";
+            else if(mark >= 80 && mark <= 89)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : B";
+            else if(mark >= 70 && mark <= 79)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : C";
+            else if(mark >= 60 && mark <= 69)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : D";
+            else if(mark >= 50 && mark <= 59)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : E";
+            else if(mark < 50)
+                document.getElementById("result").innerHTML = "Grade obtained by the student is : RA";
+        }
+    </script>
+
+-----------------------------------------------------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        text-align: center;
+    }
+
+    table,th,td {
+        width: 50%;
+        font-size: 18px;
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    tbody tr:nth-child(odd) {
+        background-color: #e0dfdf;
+    }
+
+    table.center {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button {
+        padding: 5px;
+        margin: 15px;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <table class="center" id="rateTable">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Income Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>January</td>
+          <td>5.5</td>
+        </tr>
+        <tr>
+          <td>February</td>
+          <td>5.5</td>
+        </tr>
+        <tr>
+          <td>March</td>
+          <td>4.6</td>
+        </tr>
+      </tbody>
+    </table>
+    <button id="button" onclick="getMonths()">Get Months</button>
+    <script>
+        function getMonths(){
+        document.getElementById("button").style.display = "none";
+
+        var table = document.getElementById("rateTable");
+        var tbody = table.lastElementChild;
+
+        // var head = document.createElement("h2");
+        // var txt =document.createTextNode("Rate table of monthly income");
+        // head.appendChild(txt);
+        table.insertAdjacentHTML("beforebegin", "<h2>Rate table of monthly income</h2>");
+
+        var month = ["April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var values = ["8", "6", "7.2", "4.6", "6.9", "8.5", "9.4", "5.1", "7.5"];
+
+        function tableExtension(month,val){
+          var tr = document.createElement("tr");
+          var td = document.createElement("td");
+          var mon = document.createTextNode(month);
+          var monval = document.createTextNode(val);
+          
+          td.appendChild(mon);
+          tr.appendChild(td);
+
+          var td = td.cloneNode(false);
+
+          td.appendChild(monval);
+          tr.appendChild(td);
+
+          tbody.appendChild(tr);
+        }
+
+        for(var i in month)
+          tableExtension(month[i],values[i]);
+    }
+    </script>
+  </body>
+
+</html>

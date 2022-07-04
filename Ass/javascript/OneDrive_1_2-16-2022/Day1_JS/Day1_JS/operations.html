@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- included external JS -->
+    <script src="operations.js"></script>
+    
+
+</head>
+<body>
+    <div id="res1">Addition Res</div>
+    <div id="res2">Multiplication Res</div>
+
+    <script>
+        var div1 = document.getElementById("res1")
+        var div2 = document.getElementById("res2")
+        var num1 = prompt('Enter value of num1 ',1)
+        var num2 = prompt('Enter value of num2 ',2)
+        /*
+        num1 and num2 will hold numbers but in a string form so to perform math operations
+        on that we need to convert them to number and it is possible using parseInt()
+        */
+       var x = parseInt(num1)
+       var y = parseInt(num2)
+        // div1.innerHTML = add(12,34)
+        // div2.innerHTML = multiply(8,9)
+        div1.innerHTML = add(x,y)
+        div2.innerHTML = multiply(x,y)
+
+        if(confirm("do you want to delete file ?")){
+            alert("file is deleted")
+        }
+        else {
+            alert("file is safe")
+        }
+    </script>
+</body>
+</html>

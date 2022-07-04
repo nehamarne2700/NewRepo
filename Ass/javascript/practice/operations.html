@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="operations.js"></script>
+</head>
+<body>
+    <div id="res1">Addtion result </div>
+    <div id="res2">Multiplication result </div>
+    <script>
+        var div1=document.getElementById("res1")
+        var div2=document.getElementById("res2")
+        var num1=parseInt(prompt("enter value for num1 ",1))
+        var num2=parseInt(prompt("enter value for num2 ",2))
+        div1.innerHTML=add(num1,num2)
+        div2.innerHTML=multiply(num1,num2)
+
+        if(confirm("do you want to delete the file ?")){
+            alert("file is deleted")
+        }
+        else{
+            alert("file not deleted")
+        }
+    </script>
+</body>
+</html>

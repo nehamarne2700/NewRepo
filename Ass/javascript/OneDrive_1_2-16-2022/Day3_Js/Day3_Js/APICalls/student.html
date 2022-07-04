@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function loadStudent(){
+            var url = "student.xml"
+            var xhttp = new XMLHttpRequest()
+            xhttp.open('GET',url,true)
+            xhttp.send()
+            xhttp.onreadystatechange = function(){
+                if(xhttp.readyState === 4 && xhttp.status === 200){
+                    document.getElementById("div1").innerHTML = xhttp.responseText
+                    document.getElementById("div2").innerHTML = xhttp.status
+                    document.getElementById("div3").innerHTML = xhttp.statusText             
+                }
+            }
+        }
+        function handleEvent(){
+            var btn = document.getElementById("btn")
+            btn.onclick = loadStudent
+        }
+        window.onload = handleEvent
+    </script>
+
+</head>
+<body>
+    <div id="div1">Here student data will be displayed</div>
+    <div id="div2">Here status of request will be displayed</div>
+    <div id="div3">Here status text of request will be displayed</div>
+    <button id="btn">Load Info</button>
+</body>
+</html>

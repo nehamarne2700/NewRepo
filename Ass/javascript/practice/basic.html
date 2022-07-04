@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+ <script>
+     function modify(){
+         if(this.readyState ==='interactive'){
+                alert("document state changed and it is "+this.readyState)
+         } 
+         if(this.readyState ==='complete'){
+            alert("document state changed and it is "+this.readyState)
+            var p1=document.getElementById("p1")
+            p1.innerHTML="<h2><i>"+"Checking JS-Content Modified"+"</h2></i>"
+         }
+     }
+        //var p1=document.getElementById("para")
+        //p1.innerText="modified paragraph"
+        //p1.innerHTML="<b>"+"Modified paragraph"+"</b>"
+        //window.onload=modify
+        document.onreadystatechange= modify
+    </script>
+    
+</head>
+<body>
+    <p id="p1">Welcome to js</p>
+    <!-- <p id="para">This is a paragraph</p>
+     <script>
+        var p1=document.getElementById("para")
+        //p1.innerText="modified paragraph"
+        p1.innerHTML="<b>"+"Modified paragraph"+"</b>"
+    </script>
+    -->  
+</body>
+</html>

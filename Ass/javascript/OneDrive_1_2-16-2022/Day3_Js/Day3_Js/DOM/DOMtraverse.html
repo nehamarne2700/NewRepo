@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function checkDetails(){
+            var div1 = document.getElementById("div1")
+            var div2 = document.getElementById("div2")
+            var p1 = document.getElementById("p1")
+            document.write("<br/>"+"No of child elements of div1 = "+div1.childNodes.length)
+            document.write("<br/>"+"first child of div1 = "+div1.firstChild.nodeName)
+            document.write("<br/>"+"last child of div1 = "+div1.lastChild.nodeName)
+            document.write("<br/>"+"next sibling of div2 = "+div2.nextSibling.nodeName)
+            document.write("<br/>"+"prev sibling of p1 = "+p1.previousSibling.nodeName)
+            document.write("<br/>"+" node type of div1 = "+div1.nodeType)
+            document.write("<br/>"+" node type of div2 = "+div2.nodeType)
+            document.write("<br/>"+" node type of p1 = "+p1.nodeType)
+            document.write("<br/>"+" node value of p1 = "+p1.nodeValue)
+            document.write("<br/>"+"node name of child of p1 = "+p1.firstChild.nodeName)
+            document.write("<br/>"+" node value of child of p1 = "+p1.firstChild.nodeValue)
+
+            for(let attr of p1.attributes){
+                document.write("<br/>"+"attr is "+attr)
+                document.write("<br/>"+"attr nodetype of p1 = "+attr.nodeType)
+                document.write("<br/>"+"attr nodetype of p1 = "+attr.nodeName)
+                document.write("<br/>"+"attr nodeValue of p1 = "+attr.nodeValue)
+            }
+
+        }
+        function handleEvent(){
+            document.getElementById("btn").onclick = checkDetails
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="div1"><div id="div2">This is child division</div><p id="p1">This is a child para</p></div>
+    <button id="btn">Load details </button>
+</body>
+</html>

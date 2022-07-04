@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //consider this as super
+        function Employee(empId,empName){
+            this.empId = empId
+            this.empName = empName
+
+            //constr level method
+            this.showDetails = function(){
+                document.write("<br/>"+" id = "+this.empId+" name = "+this.empName)
+            }
+        }
+        //prototype level method
+        Employee.prototype.check = function(){
+            document.write("<br/>"+" Employee prototype level method check")
+        }
+
+        function Manager(empId,empName,empSal){
+            /*
+            WE can implement classical inheritance and also we can call super constr here
+            by using built in method call() on parent 
+            */
+            Employee.call(this,empId,empName) //this is an implementation of classical inheritance
+            this.empSal = empSal
+
+            this.showSal = function(){
+                document.write("<br/>"+" salary = "+this.empSal)
+            }
+        }
+        //prototype chaining
+        Manager.prototype = new Employee(1,"Abc") //prototype chaining
+        var mgr1 = new Manager(101,"Amit",70000)
+        mgr1.showDetails()
+        mgr1.showSal()
+        mgr1.check()// this will give error because in classical inheritance 
+        //sub object can not access prototype level method of super and i.e. limitation
+        //of classical inheritance to overcome this limitation again we have to use
+        //prototype chaining but that will also have a limitation so instead of using 
+        //prototype chaining or classical inheritance we can use combination of both 
+        //i.e. pseudoclassical inheritance
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

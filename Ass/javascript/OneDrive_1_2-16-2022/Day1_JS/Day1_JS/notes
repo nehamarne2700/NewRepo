@@ -1,0 +1,93 @@
+Javascript is library, it can be used on client side as well as on server side node. 
+node.js - runtime for JS 
+
+Features of JS 
+1. IT makes HTML dynamic
+2. For making asynch call.
+3. it is used for client side validation
+
+JS can be added in HTML using <script> tag 
+1. embeded JS  - <script> tag can be used in head or body of 
+html. standard practice is <script> must be in head 
+2. external JS - here JS is completely seperated from html using 
+external js file 
+
+document object from JS - document refers web page and its methods are 
+getElementById()
+getElementsByName()
+getElementsByClass()
+getElementsByTagName()
+
+  window refers browser and this may include plugin installation, css file importing 
+       or any other script execution so using window.onload we may have to wait for all 
+       these activities to get complete. it may take more time so instead of using this 
+       as we just want page to be ready before script execution we can make use of 
+       document object and its onreadystatechange event.
+
+
+document has 5 ready states 
+1. uninitialized - document not yet started loading  
+2. loading - it is loading stage
+3. loaded - document is loaded but not enough the user can interact
+4. interactive - document is not fully loaded but loaded enough that user can interact
+5. complete - document is completely loaded
+
+ECMA script - Europian Computer Mail Association - it is a standard or specification used 
+by javascript. it means JS is implemented using ECMA standards.
+
+Versions
+ES5 - is used to implement plain vanilla js and it is supported by all the browsers
+To declare variables it uses var keyword.
+classes are implemented using function keyword 
+Inheritance in ES5 is implemented using 
+i. prototype chaining
+ii.classical inheritance
+iii.pseudoclassical inheritance
+
+ES6 / ES2015 - it supports most of the oop features so it is popular amongst developer.
+it has introduced let keyword.
+classes are implemented using class keyword
+inheritance is implemented using extends keyword.
+
+Javascript is loosely typed language 
+data types in JS 
+number
+string
+boolean
+undefined
+object
+
+there are 3 for loops in JS 
+1. standard for 
+for(initialization, condition, incre/decre){
+
+}
+2. ES5 has introduced for in loop and it returns index of array element one by one.
+3. ES6 has introduced for of loop and it returns element from array one by one
+
+
+Naming conventions
+1. variable/function names must be in camelCase
+2. file names in smallcase or camelCase
+3. constants or global variables must be in uppercase
+4. while writing variable or function names you can not use hyphen - but you can use digits,letters, underscore and $
+
+let has a block level scope and var does not have a block level scope
+
+popup window from js
+alert() - used to display info
+prompt() - it used to accept user input and it returns that in a string form
+confirm() - is used to take confirmation from user and it return boolean
+
+
+To convert a number from string form to number form we can use
+1. parseInt()
+2. Number()
+
+Types of functions in JS 
+1. function without input and without return type
+2. function with input and without return type
+3. function with input and return type
+4. arrow function from ES6
+5. anonymous function as a self executing or IIFE(immediately invoked function expression)
+6. anonymous function as a callback function

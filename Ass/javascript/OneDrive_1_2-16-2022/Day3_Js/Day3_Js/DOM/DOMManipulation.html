@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addPara(){
+            var div1 = document.getElementById("div1")
+            var p1 = document.getElementById("p1")
+            var newPara = document.createElement("p")
+            newPara.setAttribute("id","p2")
+            newPara.innerHTML = "This is newly added paragraph"
+            div1.appendChild(newPara)
+        }
+        function removePara(){
+           var div1 = document.getElementById("div1")
+            var p1 = document.getElementById("p1")
+            div1.removeChild(p1)
+        }
+        function handleEvent(){
+            var btn1 = document.getElementById("btn1")
+            var btn2 = document.getElementById("btn2")
+            btn1.onclick = addPara
+            btn2.onclick = removePara
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="div1"><p id="p1">Para 1</p></div>
+    <button id="btn1">Add New Para</button>
+    <button id="btn2">Delete Para</button>
+</body>
+</html>

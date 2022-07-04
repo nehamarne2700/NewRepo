@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleEvent(){
+            var btn = document.getElementById("btn")
+            // addEventListener allows you to use anonymous func as a callback function
+            btn.addEventListener('click',function(){
+                document.getElementById("demo").innerHTML = "<b>"+"Hello From Callback"+"</b>"
+            })
+        }
+        window.onload = handleEvent
+    </script>
+</head>
+<body>
+    <div id="demo">This is a division</div>
+    <br/>
+    <button id="btn">click</button>
+</body>
+</html>
